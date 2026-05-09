@@ -1,0 +1,311 @@
+/* =============================================================
+   Quest Board — Stylesheet
+   =============================================================
+   A clean, fantasy-tavern-inspired theme.
+   Students: feel free to edit colours, fonts, and sizes here!
+   ============================================================= */
+
+/* --- Google Fonts (same Cinzel font as the Magical Forest project!) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- CSS Variables: change these to retheme the whole site --- */
+:root {
+    --bg:          #1a1208;   /* Dark parchment background */
+    --surface:     #2d1f0e;   /* Card / form background */
+    --border:      #5c3d1a;   /* Borders */
+    --gold:        #d4a017;   /* Gold accent */
+    --gold-light:  #f0c040;   /* Lighter gold for hover */
+    --text:        #e8dcc8;   /* Main text */
+    --text-muted:  #9c8468;   /* Dimmed text */
+    --green:       #2d6a4f;   /* Success / complete colour */
+    --red:         #7b2020;   /* Danger / delete colour */
+    --red-light:   #a02020;
+
+    --font-heading: 'Cinzel', serif;
+    --font-body:    'Lora', serif;
+
+    --radius: 10px;
+    --shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-light); text-decoration: underline; }
+
+h1, h2, h3 { font-family: var(--font-heading); color: var(--gold); }
+
+/* --- Layout --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* --- Site Header / Nav --- */
+.site-header {
+    background: rgba(20, 12, 4, 0.95);
+    border-bottom: 2px solid var(--border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--gold);
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(212,160,23,0.5);
+}
+
+.site-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+.site-nav a {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.site-nav a:hover { color: var(--gold); text-decoration: none; }
+
+/* --- Page Hero (intro section at top of each page) --- */
+.page-hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+
+.page-hero h1 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.page-hero p  { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #1a1208;
+    border-color: var(--gold);
+}
+.btn-primary:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: #1a1208;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: var(--green);
+    color: #d4eedd;
+    border-color: var(--green);
+}
+.btn-success:hover {
+    background: #3a8a65;
+    border-color: #3a8a65;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background: var(--red);
+    color: #ffd5d5;
+    border-color: var(--red);
+}
+.btn-danger:hover {
+    background: var(--red-light);
+    border-color: var(--red-light);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-large { padding: 0.85rem 2rem; font-size: 1.1rem; }
+
+/* --- Quest Grid --- */
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* --- Quest Card --- */
+.quest-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* Completed quests are greyed out */
+.quest-card.is-complete {
+    opacity: 0.55;
+    border-color: #3a3a3a;
+}
+
+.quest-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.quest-title { font-size: 1.2rem; line-height: 1.3; }
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.badge-open     { background: rgba(212,160,23,0.2); color: var(--gold); border: 1px solid var(--gold); }
+.badge-complete { background: rgba(45,106,79,0.3);  color: #6fcfa0;     border: 1px solid var(--green); }
+
+.quest-description { color: var(--text-muted); font-size: 0.95rem; flex: 1; }
+
+.quest-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+}
+
+.quest-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* --- Empty State --- */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+}
+.empty-state p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+/* --- Alert Messages --- */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    border: 1px solid;
+}
+
+.alert-error {
+    background: rgba(123,32,32,0.25);
+    border-color: var(--red-light);
+    color: #ffc0c0;
+}
+
+.alert ul { margin-top: 0.5rem; padding-left: 1.5rem; }
+
+/* --- Form Styles --- */
+.quest-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    max-width: 650px;
+    box-shadow: var(--shadow);
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+}
+
+.required { color: #e05555; }
+.optional  { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-body); }
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.65rem 0.9rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(212,160,23,0.2);
+}
+
+.form-group small { display: block; color: var(--text-muted); font-size: 0.8rem; margin-top: 0.3rem; }
+
+/* --- Site Footer --- */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .page-hero h1 { font-size: 1.8rem; }
+    .quest-grid   { grid-template-columns: 1fr; }
+    .header-inner { flex-direction: column; align-items: flex-start; }
+}
