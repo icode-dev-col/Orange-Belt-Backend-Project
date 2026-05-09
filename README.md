@@ -1,18 +1,18 @@
-# ⚔️ The Quest Board — PHP & SQL Backend Project
+# The Quest Board: PHP & SQL Backend Project
 
-Welcome to your first **backend project**!
+Welcome to your final **backend project**!
 
-So far, you've built websites that live entirely in the browser — HTML, CSS, and JavaScript.
+So far, you've built websites that live entirely in the browser: HTML, CSS, and JavaScript.
 This project adds a **server** and a **database** to the mix. That means your data will actually
 be *saved* somewhere, and different people (or browser tabs) will see the same information.
 
 > Think of the Quest Board as a magical notice board in a fantasy tavern. Heroes can **post** quests,
-> **view** what's available, **mark them complete**, and **delete** old ones — and all of it gets
+> **view** what's available, **mark them complete**, and **delete** old ones; and all of it gets
 > saved to a real database!
 
 ---
 
-## 🗺️ What You Will Build
+## What You Will Build
 
 A multi-page PHP web app where users can:
 
@@ -25,7 +25,7 @@ A multi-page PHP web app where users can:
 
 ---
 
-## 🧠 What You Will Learn
+## What You Will Learn
 
 - How a **web server** (Apache via XAMPP) runs PHP files
 - How **PHP** receives form data and talks to a database
@@ -39,7 +39,7 @@ A multi-page PHP web app where users can:
 
 ---
 
-## 🛠️ Tools Required
+## Tools Required
 
 | Tool | Purpose |
 |---|---|
@@ -50,7 +50,7 @@ A multi-page PHP web app where users can:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 quest-board/                 ← Put this whole folder inside XAMPP's htdocs/
@@ -58,7 +58,7 @@ quest-board/                 ← Put this whole folder inside XAMPP's htdocs/
 ├── README.md                ← You are here!
 │
 ├── sql/
-│   └── setup.sql            ← ⭐ Run this first — creates your database & table
+│   └── setup.sql            ← ⭐ Run this first; creates your database & table
 │
 ├── includes/
 │   ├── db.php               ← Database connection (shared across all pages)
@@ -75,21 +75,20 @@ quest-board/                 ← Put this whole folder inside XAMPP's htdocs/
 
 ---
 
-## 🚀 How to Run This Project
+## How to Run This Project
 
-### Step 1 — Copy the project into XAMPP
+### Step 1: Copy the project into XAMPP
 Place the entire `quest-board/` folder inside:
 ```
-C:\xampp\htdocs\quest-board\       (Windows)
-/Applications/XAMPP/htdocs/quest-board/   (Mac)
+C:\xampp\htdocs\quest-board\
 ```
 
-### Step 2 — Start XAMPP
+### Step 2: Start XAMPP
 Open the **XAMPP Control Panel** and click **Start** next to:
 - ✅ Apache
 - ✅ MySQL
 
-### Step 3 — Create the database
+### Step 3: Create the database
 1. Open your browser and go to: `http://localhost/phpmyadmin`
 2. Click **SQL** in the top menu
 3. Copy the contents of `sql/setup.sql` and paste it in
@@ -97,16 +96,16 @@ Open the **XAMPP Control Panel** and click **Start** next to:
 
 You should now see a database called `quest_board` with a table called `quests`.
 
-### Step 4 — Open the app
+### Step 4: Open the app
 Go to: **`http://localhost/quest-board/`**
 
 ---
 
-## 🎯 Goals & Challenges
+## Goals & Challenges
 
 Work through these in order. Each one builds on the last!
 
-### 🟢 Level 1 — Get It Running (Starter Goals)
+### 🟢 Level 1: Get It Running (Starter Goals)
 - [ ] Set up XAMPP and confirm Apache + MySQL are both running
 - [ ] Run `setup.sql` and confirm the `quests` table exists in phpMyAdmin
 - [ ] Open `http://localhost/quest-board/` and see the Quest Board home page
@@ -114,7 +113,7 @@ Work through these in order. Each one builds on the last!
 - [ ] Mark a quest as complete and see it visually change
 - [ ] Delete a quest and confirm it's gone
 
-### 🟡 Level 2 — Understand the Code (Comprehension Goals)
+### 🟡 Level 2: Understand the Code (Comprehension Goals)
 - [ ] Explain in your own words: what does `db.php` do, and why is it `include`-d everywhere?
 - [ ] Trace the journey of a form submission: what happens from the moment you click "Post Quest"?
 - [ ] Find where SQL injection could happen if we *didn't* use prepared statements. Why is it dangerous?
@@ -122,7 +121,7 @@ Work through these in order. Each one builds on the last!
 - [ ] What does `htmlspecialchars()` do, and what attack does it prevent?
 - [ ] Why does `post_quest.php` redirect after saving instead of just showing the board?
 
-### 🔴 Level 3 — Extend It (Stretch Goals)
+### 🔴 Level 3: Extend It (Stretch Goals)
 - [ ] **Add a difficulty field** — Easy / Medium / Hard. Store it in the database and display a badge next to each quest
 - [ ] **Add a reward field** — A short text like "50 gold coins". Show it on the board
 - [ ] **Add a search bar** — Filter quests by keyword using a SQL `WHERE title LIKE ?` query
@@ -133,7 +132,7 @@ Work through these in order. Each one builds on the last!
 
 ---
 
-## 🧩 Key Concepts — Quick Reference
+## Key Concepts: Quick Reference
 
 ### What is CRUD?
 Every database app does four things:
@@ -180,7 +179,7 @@ PDO is the recommended approach because:
 
 ---
 
-## 🔒 Security Concepts
+## Security Concepts
 
 ### What is SQL Injection?
 SQL injection is one of the **most dangerous** web attacks. It happens when a hacker types SQL code into a form field, and your app accidentally runs it.
@@ -264,7 +263,7 @@ Without this, if the user refreshes after submitting, the browser asks "Re-submi
 
 ---
 
-## 🔑 PHP Concepts Used
+## PHP Concepts Used
 
 ### `$_POST` vs `$_GET`
 | | `$_GET` | `$_POST` |
@@ -309,7 +308,7 @@ Tells the browser "go to this URL instead." Used after INSERT, UPDATE, and DELET
 
 ---
 
-## 💡 Hints & Tips
+## Hints & Tips
 
 - **Nothing showing up?** Check that Apache and MySQL are both green in XAMPP.
 - **Database error?** Make sure you ran `setup.sql` in phpMyAdmin first.
@@ -320,7 +319,7 @@ Tells the browser "go to this URL instead." Used after INSERT, UPDATE, and DELET
 
 ---
 
-## 📜 Glossary
+## Glossary
 
 | Term | Meaning |
 |---|---|
