@@ -1,4 +1,4 @@
-# 📋 Quest Board — Setup Instructions
+# Quest Board: Setup Instructions
 
 Follow these steps **in order** to get The Quest Board running on your computer. Each step includes screenshots descriptions and troubleshooting tips so you don't get stuck.
 
@@ -20,7 +20,7 @@ Follow these steps **in order** to get The Quest Board running on your computer.
 
 ---
 
-## 🧰 Step 0 — What You Need
+## Step 0: What You Need
 
 Before starting, make sure you have:
 
@@ -43,7 +43,7 @@ Think of XAMPP as a "mini internet" on your computer. Instead of uploading files
 
 ---
 
-## 📥 Step 1 — Download & Install XAMPP
+## Step 1: Download & Install XAMPP
 
 ### Windows
 
@@ -59,22 +59,12 @@ Think of XAMPP as a "mini internet" on your computer. Instead of uploading files
 5. Install to the default location: `C:\xampp`
 6. Click **Finish** when done
 
-### Mac
-
-1. Go to: **[https://www.apachefriends.org/download.html](https://www.apachefriends.org/download.html)**
-2. Click the **macOS** download button
-3. Open the `.dmg` file and drag XAMPP to your Applications folder
-4. You may need to allow it in **System Preferences → Security & Privacy**
-5. Open XAMPP from your Applications folder
-
 ### ✅ How to verify it worked
 
 - **Windows:** You should see a "XAMPP Control Panel" shortcut on your desktop or in your Start Menu.
-- **Mac:** You should see XAMPP in your Applications folder.
-
 ---
 
-## ▶️ Step 2 — Start Apache & MySQL
+## Step 2: Start Apache & MySQL
 
 ### Windows
 
@@ -116,7 +106,7 @@ You should see the XAMPP welcome page (a page with the XAMPP logo and "Welcome t
 
 ---
 
-## 📂 Step 3 — Copy the Project Files
+## Step 3: Copy the Project Files
 
 The `quest-board` folder needs to be placed inside XAMPP's **htdocs** directory. This is the folder Apache looks in when you visit `http://localhost`.
 
@@ -126,13 +116,6 @@ The `quest-board` folder needs to be placed inside XAMPP's **htdocs** directory.
 2. Navigate to: `C:\xampp\htdocs\`
 3. Copy the entire `quest-board` folder and paste it here
 4. You should now have: `C:\xampp\htdocs\quest-board\`
-
-### Mac
-
-1. Open **Finder**
-2. Navigate to: `/Applications/XAMPP/htdocs/`
-3. Copy the entire `quest-board` folder and paste it here
-4. You should now have: `/Applications/XAMPP/htdocs/quest-board/`
 
 ### ✅ How to verify it worked
 
@@ -163,7 +146,7 @@ htdocs/
 
 ---
 
-## 🗄️ Step 4 — Create the Database
+## Step 4: Create the Database
 
 Before the app can work, we need to create the database and table where quests will be stored. We'll do this using **phpMyAdmin** — a visual tool that lets you manage your MySQL database.
 
@@ -219,7 +202,7 @@ phpMyAdmin is like a spreadsheet viewer for your database. It lets you:
 
 ---
 
-## 🌐 Step 5 — Open the App
+## Step 5: Open the App
 
 1. Open your browser
 2. Go to: **`http://localhost/quest-board/`**
@@ -247,7 +230,7 @@ Browser  ←  Apache  ←  PHP  ←  (quest data)
 
 ---
 
-## 🧪 Step 6 — Test Everything
+## Step 6: Test Everything
 
 Now let's make sure all four CRUD operations work!
 
@@ -291,7 +274,7 @@ This confirms your PHP code is actually talking to MySQL!
 
 ---
 
-## 🛑 Step 7 — Shutting Down
+## Step 7: Shutting Down
 
 When you're done working:
 
@@ -312,7 +295,7 @@ When you're done working:
 
 ---
 
-## ❓ Troubleshooting
+## Troubleshooting
 
 ### "I can't access `http://localhost`"
 
@@ -392,7 +375,7 @@ PHP runs on the **server**, not in the browser. Unlike CSS/JS:
 
 ---
 
-## 🔁 Quick-Start Checklist (After First Setup)
+## Quick-Start Checklist (After First Setup)
 
 Once everything is set up, here's what you do each time you want to work on the project:
 
@@ -408,7 +391,7 @@ When done:
 
 ---
 
-## 📚 Next Steps
+## Next Steps
 
 Once you're comfortable with the basic app, check the **README.md** file for:
 
